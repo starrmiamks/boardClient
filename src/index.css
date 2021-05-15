@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 150;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: lightgrey; */
+  /* background-image: url('/pale.png'); */
+  background-size: cover;
+  height: 100vh;
+  text-decoration-color: #000000;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+h1.Logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+}
+
+#registerDiv {
+  margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+}
+
+#loginDiv {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.MuiButton-root {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+}
+
+#Intro {
+  margin: auto;
+  width: 45%;
+  padding: 10px;
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+  /* background-image: url(/background.png); */
+}
+
+#toggle {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+#footer {
+  margin-top: 100rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: #C17C74; */
+  /* color: white; */
+  text-align: center;}
+  .spacer{
+      height:10rem;
+  }
+
+
