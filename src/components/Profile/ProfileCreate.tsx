@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { FormControl, TextField, Button } from '@material-ui/core';
-// import FormControl from '@material-ui/core/FormControl';
+import FormControl from '@material-ui/core/FormControl';
 import { TextField, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 // import { ImageUploader } from './ImageUploader'
@@ -41,15 +41,15 @@ const useStyles = makeStyles({
 
 const styles = {
     root: {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-      borderRadius: 3,
-      border: 0,
-      color: 'white',
-      height: 48,
-      padding: '0 30px',
-      boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        borderRadius: 3,
+        border: 0,
+        color: 'white',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
-  };
+};
 
 export default class ProfileCreate extends Component<AcceptedProps, ProfileState> {
     constructor(props: AcceptedProps) {
@@ -94,46 +94,46 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
             <div>
                 <div id='profileCreateDiv'>
                     <h3 id='profileHeading'>Add a Board</h3>
-                    {/* <FormControl style={{ backgroundColor: '#FFFFFF' }}> */}
-                    <div className='picture'>
-                        {/* <Card>
+                    <FormControl style={{ backgroundColor: '#FFFFFF' }}>
+                        <div className='picture'>
+                            {/* <Card>
                             <CardContent> */}
-                                <TextField
-                                    label="Board Name"
-                                    variant="outlined"
-                                    type='text'
-                                    onChange={(e) => {
-                                        this.setState({ title: e.target.value });
-                                    }}
-                                />
-                                {/* <ImageUploader /> */}
-                                <TextField
-                                    label="Upload Image"
-                                    variant='outlined'
-                                    type='text'
-                                    onChange={(e) => {
-                                        this.setState({ picture: e.target.value });
-                                    }}
-                                />
-                                <TextField
-                                    id='outlined-textarea'
-                                    label='Details'
-                                    type='text'
-                                    multiline
-                                    variant='outlined'
-                                    onChange={(e) => {
-                                        this.setState({ details: e.target.value });
-                                    }}
-                                />
-                                <CardActions>
-                                    <Link to='/profile/mine'>
-                                        <Button variant='contained' onClick={(e) => { this.handleSubmit(e) }}>Add Board</Button>
-                                    </Link>
-                                </CardActions>
-                                {/* </FormControl> */}
+                            <TextField
+                                label="Board Name"
+                                variant="outlined"
+                                type='text'
+                                onChange={(e) => {
+                                    this.setState({ title: e.target.value });
+                                }}
+                            />
+                            {/* <ImageUploader /> */}
+                            <TextField
+                                label="Upload Image"
+                                variant='outlined'
+                                type='text'
+                                onChange={(e) => {
+                                    this.setState({ picture: e.target.value });
+                                }}
+                            />
+                            <TextField
+                                id='outlined-textarea'
+                                label='Details'
+                                type='text'
+                                multiline
+                                variant='outlined'
+                                onChange={(e) => {
+                                    this.setState({ details: e.target.value });
+                                }}
+                            />
+                            <CardActions>
+                                <Link to='/profile/mine'>
+                                    <Button variant='contained' onClick={(e) => { this.handleSubmit(e) }}>Add Board</Button>
+                                </Link>
+                            </CardActions>
                             {/* </CardContent>
                             `</Card> */}
-                    </div>
+                        </div>
+                    </FormControl>
                 </div>
             </div>
         );

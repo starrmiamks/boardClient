@@ -63,13 +63,13 @@ export class Login extends Component<AcceptedProps, UserState>{
     render() {
         return (
             <div id='loginDiv'>
-                <h2>Login</h2>
+                <h2 id='login'>Login</h2>
                 <ValidatorForm
                     ref="form"
                     onSubmit={this.handleSubmit}
                     onError={(errors) => console.log(errors)}
                 >
-                    <TextValidator
+                    <TextValidator 
                         label="email"
                         onChange={this.handleEmailChange}
                         name="email"

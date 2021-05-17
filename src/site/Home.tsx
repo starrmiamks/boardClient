@@ -5,7 +5,7 @@ type HomeProps = {};
 const Home: FC<HomeProps> = (props) => {
     return (
         <div className='intro'>
-            <h5 id='Intro' style={{ marginTop: '5rem' }}>
+            <h5 id='Intro'>
                 Welcome to Board! 
                 <br />
                 <br />
