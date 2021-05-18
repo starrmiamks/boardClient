@@ -71,7 +71,7 @@ export default class SubscriptionCreate extends Component<
         }),
         headers: new Headers({
           "Content-Type": "application/json",
-          Authorization: this.props.sessionToken,
+          'Authorization': this.props.sessionToken,
         }),
       })
         .then((response) => response.json())

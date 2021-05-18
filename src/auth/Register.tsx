@@ -51,7 +51,7 @@ export class Register extends Component<AcceptedProps, UserState> {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    this.props.updateSessionToken(data.updateSessionToken);
+                    this.props.updateSessionToken(data.sessionToken);
                 })
                 .catch((error) => console.log(error))
         } else {

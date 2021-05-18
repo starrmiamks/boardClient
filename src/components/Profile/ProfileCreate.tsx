@@ -63,29 +63,31 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
     }
 
     handleSubmit = (event: any) => {
+        event.preventDefault();
         if (this.props.sessionToken) {
             console.log('Before ProfileCreate Fetch');
-            event.preventDefault();
             fetch('http://localhost:3000/profile/add', {
                 method: 'POST',
-                body: JSON.stringify({
-                    user: {
-                        picture: this.state.picture,
-                        title: this.state.title,
-                        details: this.state.details,
-                        userId: this.state.userId,
-                    },
-                }),
                 headers: new Headers({
                     'Content-Type': 'application/json',
-                    Authorization: this.props.sessionToken
+                    'Authorization': this.props.sessionToken
                 }),
+                body: JSON.stringify({
+                    user: {
+                        title: this.state.title,
+                        picture: this.state.picture,
+                        details: this.state.details,
+                        userId: this.state.userId,
+                    }
+                })
             })
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
                 })
                 .catch((err) => console.log(err));
+        } else {
+            console.log("that didn't work");
         }
     };
 
@@ -96,8 +98,6 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
                     <h3 id='profileHeading'>Add a Board</h3>
                     <FormControl style={{ backgroundColor: '#FFFFFF' }}>
                         <div className='picture'>
-                            {/* <Card>
-                            <CardContent> */}
                             <TextField
                                 label="Board Name"
                                 variant="outlined"
@@ -130,8 +130,6 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
                                     <Button variant='contained' onClick={(e) => { this.handleSubmit(e) }}>Add Board</Button>
                                 </Link>
                             </CardActions>
-                            {/* </CardContent>
-                            `</Card> */}
                         </div>
                     </FormControl>
                 </div>
