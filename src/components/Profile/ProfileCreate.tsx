@@ -10,6 +10,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+// import ProfileCard from './ProfileCard';
 
 
 type AcceptedProps = {
@@ -73,7 +74,7 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
                     'Authorization': this.props.sessionToken
                 }),
                 body: JSON.stringify({
-                    user: {
+                    profile: {
                         title: this.state.title,
                         picture: this.state.picture,
                         details: this.state.details,
@@ -132,6 +133,7 @@ export default class ProfileCreate extends Component<AcceptedProps, ProfileState
                             </CardActions>
                         </div>
                     </FormControl>
+                    {/* <ProfileCard /> */}
                 </div>
             </div>
         );

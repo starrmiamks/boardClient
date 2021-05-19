@@ -54,8 +54,8 @@ export default class SubscriptionCreate extends Component<
   }
 
   handleSubmit = (event: any) => {
-    console.log("Before SubscriptionCreate Fetch");
     if (this.props.sessionToken) {
+      console.log("Before SubscriptionCreate Fetch");
       event.preventDefault();
       fetch('http://localhost:3000/subscription/signup', {
         method: "POST",
