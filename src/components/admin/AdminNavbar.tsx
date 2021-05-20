@@ -5,6 +5,7 @@ import { Button, Toolbar } from "@material-ui/core";
 type ValueTypes = {};
 type AcceptedProps = {
     clearUser: () => void;
+    sessionToken: string | null;
     email: string | null | undefined;
 };
 
@@ -18,8 +19,8 @@ export class AdminNavbar extends Component<AcceptedProps, ValueTypes> {
             <div>
                 <div id='adminContainer'>
                     <div style={{ display: 'block', justifyContent: 'flext-start'}} className='header'>
-                        <h3 className='header'>AdminNavbar</h3>
-                        <h3>Welcome {this.props.email}</h3>
+                        {/* <h3 className='header'>AdminNavbar</h3> */}
+                        {/* <h3>Welcome {this.props.email}</h3> */}
                         <h5>What would you like to manage?</h5>
                     </div>
                 </div>

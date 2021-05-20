@@ -27,22 +27,22 @@ type ProfileDataState = {
     details: string;
 };
 
-const useStyles = makeStyles({
-    root: {
-        minWidth: 275,
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
-});
+// const useStyles = makeStyles({
+//     root: {
+//         minWidth: 275,
+//     },
+//     bullet: {
+//         display: 'inline-block',
+//         margin: '0 2px',
+//         transform: 'scale(0.8)',
+//     },
+//     title: {
+//         fontSize: 14,
+//     },
+//     pos: {
+//         marginBottom: 12,
+//     },
+// });
 
 export class ProfileEdit extends Component<AcceptedProps, ProfileDataState>{
     constructor(props: AcceptedProps) {
@@ -76,7 +76,7 @@ export class ProfileEdit extends Component<AcceptedProps, ProfileDataState>{
     fetchProfile = () => {
         if (this.props.sessionToken) {
             console.log('Before ProfileEdit Fetch');
-            fetch(`http://localhost:3000/profile/mine`, {
+            fetch(`http://localhost:3000/profile/one/${this.props.profileId}`, {
                 method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',

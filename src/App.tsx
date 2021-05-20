@@ -84,6 +84,7 @@ export default class BoardApp extends Component<{}, sessionState> {
     return this.state.sessionToken === localStorage.getItem('sessionToken') ? (
       localStorage.getItem('userRole') === 'true' ? (
         <AdminNavbar
+          sessionToken={this.state.sessionToken}
           clearUser={this.clearUser}
           email={this.state.email}
         />

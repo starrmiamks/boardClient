@@ -34,8 +34,19 @@ export class Navbar extends Component<AcceptedProps, {}> {
             </Link>
           </Button>
           <Button style={{ margin: "1rem 3rem" }}>
+            <Link style={{ color: "#000000" }} to="/profile/update">
+              {" "}
+              Update a Board
+            </Link>
+          </Button>
+          <Button style={{ margin: "1rem 3rem" }}>
             <Link style={{ color: "#000000" }} to="/subscription/signup">
               Subscribe
+            </Link>
+          </Button>
+          <Button style={{ margin: "1rem 3rem" }}>
+            <Link style={{ color: "#000000" }} to="/subscription/mine">
+              My Subscription
             </Link>
           </Button>
           <Button style={{ margin: "1rem 3rem" }}>

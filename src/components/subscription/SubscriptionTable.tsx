@@ -14,8 +14,8 @@ import {
 
 type AcceptedProps = {
   sessionToken: string | null;
-  subscriptionId: number;
-  updateSubscriptionId: (newGroceryId: number) => void;
+  // subscriptionId: number;
+  // updateSubscriptionId: (newSubscriptionId: number) => void;
 };
 
 type SubscriptionDataState = {
@@ -77,14 +77,14 @@ export default class SubscriptionTable extends Component<
     return this.state.subscriptionData.map((subscriptions: SubscriptionDetails, index) => {
       return (
         <TableRow key={index}>
-          <TableCell component="th" scope="row">
+          {/* <TableCell component="th" scope="row">
             {subscriptions.id}{" "}
-          </TableCell>
-          <TableCell align="right">{subscriptions.streetAddress1}</TableCell>
-          <TableCell align="right">{subscriptions.streetAddress2}</TableCell>
-          <TableCell align="right">{subscriptions.city}</TableCell>
-          <TableCell align="right">{subscriptions.state}</TableCell>
-          <TableCell align="right">{subscriptions.zip}</TableCell>
+          </TableCell> */}
+          <TableCell align="center">{subscriptions.streetAddress1}</TableCell>
+          <TableCell align="center">{subscriptions.streetAddress2}</TableCell>
+          <TableCell align="center">{subscriptions.city}</TableCell>
+          <TableCell align="center">{subscriptions.state}</TableCell>
+          <TableCell align="center">{subscriptions.zip}</TableCell>
         </TableRow>
       );
     });
@@ -109,22 +109,24 @@ export default class SubscriptionTable extends Component<
   render() {
     return (
       <div>
-        <h3>Subscription Table</h3>
-        <TableContainer component={Paper}>
-          <Table style={styles.table} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="right">id</TableCell>
-                <TableCell align="right">Street Address 1</TableCell>
-                <TableCell align="right">Street Address 2</TableCell>
-                <TableCell align="right">City</TableCell>
-                <TableCell align="right">State</TableCell>
-                <TableCell align="right">Zip</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{this.subscriptionMapper()}</TableBody>
-          </Table>
-        </TableContainer>
+        <div>
+          <h3>My Subscription</h3>
+          <TableContainer component={Paper} id="subscriptionTable">
+            <Table style={styles.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  {/* <TableCell align="center">id</TableCell> */}
+                  <TableCell align="center">Street Address 1</TableCell>
+                  <TableCell align="center">Street Address 2</TableCell>
+                  <TableCell align="center">City</TableCell>
+                  <TableCell align="center">State</TableCell>
+                  <TableCell align="center">Zip</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>{this.subscriptionMapper()}</TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       </div>
     );
   }
