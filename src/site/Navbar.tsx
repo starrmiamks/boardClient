@@ -50,8 +50,8 @@ export class Navbar extends Component<AcceptedProps, {}> {
             </Link>
           </Button>
           <Button style={{ margin: "1rem 3rem" }}>
-            <Link style={{ color: "#000000" }} to="/user/edit">
-              Edit my Acct
+            <Link style={{ color: "#000000" }} to="/subscription/update">
+              Edit my Subscription
             </Link>
           </Button>
           <Button

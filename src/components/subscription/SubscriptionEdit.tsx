@@ -129,8 +129,9 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
     return (
       <div>
         <div id='subscriptionEditDiv'>
-          <h2 id='subscriptionEditHeading'>Edit Your Subscription</h2>
+          <h3 id='subscriptionEditHeading'>Edit Your Subscription</h3>
           {/* <FormControl style={{ backgroundColor: '#FFFFFF' }}> */}
+          <div>
             <TextField
               label='Street Address 1'
               variant='outlined'
@@ -139,7 +140,9 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
               onChange={(e) => {
                 this.setState({ streetAddress1: e.target.value });
               }}
-            />
+              />
+              </div>
+              <div>
             <TextField
               label='Street Address 2'
               variant='outlined'
@@ -148,7 +151,8 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
               onChange={(e) => {
                 this.setState({ streetAddress2: e.target.value });
               }}
-            />
+              />
+              </div>
             <div>
               <TextField
                 label='City'
@@ -159,6 +163,8 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
                   this.setState({ city: e.target.value });
                 }}
               />
+              </div>
+              <div>
               <TextField
                 label='State'
                 variant='outlined'
@@ -168,6 +174,8 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
                   this.setState({ state: e.target.value });
                 }}
               />
+              </div>
+              <div>
               <TextField
                 label='Zip Code'
                 variant='outlined'
@@ -196,11 +204,11 @@ export class SubscriptionEdit extends Component<AcceptedProps, SubscriptionDataS
                   Update
                 </Link>
               </Button>
-
-              <Link to='/subscription/mine'>
+            </div>
+            <div>
+              <Link style={{ color: '#000000' }} to='/subscription/mine'>
                 <Button
-                  variant='outlined'
-                  color='primary'
+                  variant='contained'
                   value={this.state.subId}
                   onClick={(e) => {
                     this.handleDelete(this.state.subId);

@@ -101,6 +101,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ streetAddress1: e.target.value });
                   }}
                 />
+              </div>
+              <div>
                 <TextField
                   label="Street Address 2"
                   variant="outlined"
@@ -118,6 +120,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ city: e.target.value });
                   }}
                 />
+                </div>
+                <div>
                 <TextField
                   label="State"
                   variant="outlined"
@@ -126,6 +130,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ state: e.target.value });
                   }}
                 />
+                </div>
+                <div>
                 <TextField
                   label="Zip Code"
                   variant="outlined"
@@ -134,6 +140,7 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ zip: e.target.value });
                   }}
                 />
+                
               </div>
               <Button
                 variant="contained"

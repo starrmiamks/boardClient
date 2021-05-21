@@ -59,8 +59,8 @@ span.MuiButton-label {
 }
 
 #footer {
-  margin-top: 400rem;
-  position: fixed;
+  margin-top: 5rem;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -104,12 +104,6 @@ p {
   font-weight: 300;
 }
 
-button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined {
-  /* background-color: #EAE7DC; */
-  border-radius: 25px;
-
-}
-
 button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined:hover {
   background-color: #E98074;
 }
@@ -130,3 +124,47 @@ td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignCenter {
   font-weight: 150;
 }
 
+#profileCreateDiv {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 0.5px solid black;
+}
+
+div.MuiCardActions-root.MuiCardActions-spacing {
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  padding-bottom: 20px;
+  
+}
+
+/* button.MuiButtonBase-root.MuiButton-root.MuiButton-contained {
+  margin: auto;
+} */
+
+#profileEditDiv {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 0.5px solid black;
+}
+
+#subscriptionCreateDiv {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 0.5px solid black;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#subscriptionEditDiv {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 0.5px solid black;
+}

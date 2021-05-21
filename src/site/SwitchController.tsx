@@ -88,7 +88,7 @@ const SwitchController: FC<ControllerProps> = (props) => {
                             // updateSubscriptionId={props.updateSubscriptionId}
                         />
                     </Route>
-                    <Route exact path="/user/subscriptionEdit">
+                    <Route exact path="/subscription/update">
                         <SubscriptionEdit
                             sessionToken={props.sessionToken}
                             subscriptionId={props.subscriptionId}
