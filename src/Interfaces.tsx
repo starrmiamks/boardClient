@@ -9,7 +9,7 @@ export interface UserDetails {
     lastName: string;
     email: string;
     password: string;
-    admin: string;
+    isAdmin: string;
 }
 
 export interface Prof {

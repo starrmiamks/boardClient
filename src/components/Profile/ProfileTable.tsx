@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import APIURL from "../../helpers/environment";
 import { ProfileDetails } from "../../Interfaces";
+// import { ProfileEdit } from './ProfileEdit';
 
 import {
   Table,
@@ -73,12 +74,10 @@ export default class ProfileTable extends Component<
     return this.state.profileData.map((profiles: ProfileDetails, index) => {
       return (
         <TableRow key={index}>
-          <TableCell component="th" scope="row">
-            {profiles.id}{" "}
-          </TableCell>
-          <TableCell align="right">{profiles.title}</TableCell>
-          <TableCell align="right">{profiles.picture}</TableCell>
-          <TableCell align="right">{profiles.details}</TableCell>
+          {/* <TableCell component="th" scope="row">{profiles.id}{" "}</TableCell> */}
+          <TableCell align="center">{profiles.title}</TableCell>
+          <TableCell align="center">{profiles.picture}</TableCell>
+          <TableCell align="center">{profiles.details}</TableCell>
         </TableRow>
       );
     });
@@ -107,16 +106,17 @@ export default class ProfileTable extends Component<
         <TableContainer component={Paper}>
           <Table style={styles.table} aria-label="simple table">
             <TableHead>
-              <TableRow>
-                <TableCell align="right">id</TableCell>
-                <TableCell align="right">Board Title</TableCell>
-                <TableCell align="right">Board Image</TableCell>
-                <TableCell align="right">Board Details</TableCell>
+              <TableRow id='table'>
+                {/* <TableCell align="center">id</TableCell> */}
+                <TableCell align="center">Board Title</TableCell>
+                <TableCell align="center">Board Image Link</TableCell>
+                <TableCell align="center">Board Details</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>{this.profileMapper()}</TableBody>
           </Table>
         </TableContainer>
+        {/* <ProfileEdit /> */}
       </div>
     );
   }

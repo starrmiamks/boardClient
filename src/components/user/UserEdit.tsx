@@ -58,7 +58,7 @@ export class UserEdit extends Component<AcceptedProps, UserDataState> {
                 lastName: '',
                 email: '',
                 password: '',
-                admin: '',
+                isAdmin: '',
             },
         };
         console.log('UserEdit: ', this.props.sessionToken);

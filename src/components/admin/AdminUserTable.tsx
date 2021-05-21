@@ -42,7 +42,7 @@ export class AdminUserTable extends Component<AcceptedProps, UserDataState> {
                 lastName: '',
                 email: '',
                 password: '',
-                admin: 'false',
+                isAdmin: 'false',
             },
         };
     }
@@ -89,7 +89,7 @@ export class AdminUserTable extends Component<AcceptedProps, UserDataState> {
                     <TableCell align='right'>{users.firstName}</TableCell>
                     <TableCell align='right'>{users.lastName}</TableCell>
                     <TableCell align='right'>{users.email}</TableCell>
-                    <TableCell align='right'>{users.admin}</TableCell>
+                    <TableCell align='right'>{users.isAdmin}</TableCell>
                     <TableCell align='right'>
                         <Link to='/admin/edit'>
                             <Button

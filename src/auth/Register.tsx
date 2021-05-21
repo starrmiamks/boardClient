@@ -30,8 +30,8 @@ export class Register extends Component<AcceptedProps, UserState> {
     handleSubmit = (e: any) => {
         if (
             this.state.email !== "" &&
-            this.state.password !== "" &&
             this.state.firstName !== "" &&
+            this.state.lastName !== "" &&
             this.state.password !== ""
         ) {
             e.preventDefault();
@@ -51,7 +51,7 @@ export class Register extends Component<AcceptedProps, UserState> {
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    this.props.updateSessionToken(data.updateSessionToken);
+                    this.props.updateSessionToken(data.sessionToken);
                 })
                 .catch((error) => console.log(error))
         } else {
@@ -78,13 +78,13 @@ export class Register extends Component<AcceptedProps, UserState> {
     render() {
         return (
             <div id='registerDiv'>
-                <h2>Welcome!</h2>
+                <h2 id='welcome'>Welcome!</h2>
                 <ValidatorForm
                     ref="form"
                     onSubmit={this.handleSubmit}
                     onError={(errors) => console.log(errors)}
                 >
-                    <TextValidator
+                    <TextValidator 
                         label="first name"
                         onChange={this.handleFirstNameChange}
                         name="first name"
@@ -93,7 +93,7 @@ export class Register extends Component<AcceptedProps, UserState> {
                         errorMessages={["this field is required"]}
                         autoComplete="off"
                     />
-                    <TextValidator
+                    <TextValidator 
                         label="last name"
                         onChange={(e) => this.handleLastNameChange(e)}
                         name="last name"

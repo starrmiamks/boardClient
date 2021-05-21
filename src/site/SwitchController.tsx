@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Admin } from '../components/admin/Admin';
 import UserEdit from "../components/user/UserEdit";
 import User from "../components/user/User";
 import AdminUserTable from "../components/admin/AdminUserTable";
@@ -50,6 +51,9 @@ const SwitchController: FC<ControllerProps> = (props) => {
                             updateUserRole={props.updateUserRole}
                         />
                     </Route>
+                    <Route exact path="/admin/home">
+                        <Admin />
+                    </Route>
                     <Route exact path="/user/edit">
                         <UserEdit
                             sessionToken={props.sessionToken}
@@ -77,17 +81,23 @@ const SwitchController: FC<ControllerProps> = (props) => {
                     <Route exact path="/subscription/signup">
                         <SubscriptionCreate sessionToken={props.sessionToken} />
                     </Route>
-                    <Route exact path="/user/subscriptionList">
+                    <Route exact path="/subscription/mine">
                         <SubscriptionTable
                             sessionToken={props.sessionToken}
-                            subscriptionId={props.subscriptionId}
-                            updateSubscriptionId={props.updateSubscriptionId}
+                            // subscriptionId={props.subscriptionId}
+                            // updateSubscriptionId={props.updateSubscriptionId}
                         />
                     </Route>
-                    <Route exact path="/user/subscriptionEdit">
+                    <Route exact path="/subscription/update">
                         <SubscriptionEdit
                             sessionToken={props.sessionToken}
                             subscriptionId={props.subscriptionId}
+                        />
+                    </Route>
+                    <Route exact path="/profile/update">
+                        <ProfileEdit
+                            sessionToken={props.sessionToken}
+                            profileId={props.profileId}
                         />
                     </Route>
                     <Route exact path="/admin/subscriptionList">

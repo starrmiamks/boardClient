@@ -7,6 +7,7 @@ import { ProfileDetails } from "../../Interfaces";
 // import EditIcon from "@material-ui/icons/Edit";
 // import DeleteIcon from "@material-ui/icons/Delete";
 import { Edit as EditIcon, Delete as DeleteIcon } from '@material-ui/icons';
+import menuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -27,22 +28,22 @@ type ProfileDataState = {
     details: string;
 };
 
-const useStyles = makeStyles({
-    root: {
-        minWidth: 275,
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
-});
+// const useStyles = makeStyles({
+//     root: {
+//         minWidth: 275,
+//     },
+//     bullet: {
+//         display: 'inline-block',
+//         margin: '0 2px',
+//         transform: 'scale(0.8)',
+//     },
+//     title: {
+//         fontSize: 14,
+//     },
+//     pos: {
+//         marginBottom: 12,
+//     },
+// });
 
 export class ProfileEdit extends Component<AcceptedProps, ProfileDataState>{
     constructor(props: AcceptedProps) {
@@ -76,7 +77,8 @@ export class ProfileEdit extends Component<AcceptedProps, ProfileDataState>{
     fetchProfile = () => {
         if (this.props.sessionToken) {
             console.log('Before ProfileEdit Fetch');
-            fetch(`http://localhost:3000/profile/mine`, {
+            fetch(`http://localhost:3000/profile/one/${this.props
+                }`, {
                 method: 'GET',
                 headers: new Headers({
                     'Content-Type': 'application/json',
@@ -143,59 +145,65 @@ export class ProfileEdit extends Component<AcceptedProps, ProfileDataState>{
                     {/* <FormControl style={{ backgroundColor: '#FFFFFF' }}> */}
                     {/* <Card>
                         <CardContent> */}
-                            <TextField
-                                label="Edit Board Name"
-                                variant="outlined"
-                                type='text'
-                                value={this.state.title}
-                                onChange={(e) => {
-                                    this.setState({ title: e.target.value });
-                                }}
-                            />
-                            <TextField
-                                label="Edit Image"
-                                variant='outlined'
-                                type='text'
-                                value={this.state.picture}
-                                onChange={(e) => {
-                                    this.setState({ picture: e.target.value });
-                                }}
-                            />
-                            <TextField
-                                id='outlined-textarea'
-                                label='Edit Details'
-                                type='text'
-                                value={this.state.details}
-                                multiline
-                                variant='outlined'
-                                onChange={(e) => {
-                                    this.setState({ details: e.target.value });
-                                }}
-                            />
-                            <div
-                                style={{ color: '#000000', display: 'flex', justifyContent: 'space-evenly', }}
-                            >
-                                <Button variant='contained' onClick={(e) => { this.handleSubmit(e) }}>
-                                    <EditIcon />
-                                    <Link style={{ color: '#000000' }} to='/profile/mine'>
-                                        Edit a Profile Entry
+                    <div>
+                        <TextField
+                            label="Edit Board Name"
+                            variant="outlined"
+                            type='text'
+                            value={this.state.title}
+                            onChange={(e) => {
+                                this.setState({ title: e.target.value });
+                            }}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            label="Edit Image"
+                            variant='outlined'
+                            type='text'
+                            value={this.state.picture}
+                            onChange={(e) => {
+                                this.setState({ picture: e.target.value });
+                            }}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            // id='outlined-textarea'
+                            label='Edit Details'
+                            type='text'
+                            value={this.state.details}
+                            // multiline
+                            variant='outlined'
+                            onChange={(e) => {
+                                this.setState({ details: e.target.value });
+                            }}
+                        />
+                    </div>
+                    <div id="editButton">
+                        <Button variant='contained' onClick={(e) => { this.handleSubmit(e) }}>
+                            <EditIcon />
+                            <Link style={{ color: '#000000' }} to='/profile/mine'>
+                                Edit a Profile Entry
                             </Link>
-                                </Button>
-                                <Link to='/profile/mine'>
-                                    <Button
-                                        variant='contained'
-                                        // color='primary'
-                                        value={this.state.profId}
-                                        onClick={(e) => {
-                                            this.handleDelete(this.state.profId);
-                                        }}
-                                    >
-                                        <DeleteIcon />
+                        </Button>
+                    </div>
+                    <div id="deleteProfileButton">
+                        <Link to='/profile/mine'>
+                            <Button
+                                variant='contained'
+                                // color='primary'
+                                value={this.state.profId}
+                                onClick={(e) => {
+                                    this.handleDelete(this.state.profId);
+                                }}
+                            >
+                                <DeleteIcon />
                                             Delete Profile
                                     </Button>
-                                </Link>
-                            </div>
-                        {/* </CardContent>
+                        </Link>
+                    </div>
+                    {/* </CardContent>
                     </Card> */}
                     {/* </FormControl> */}
                 </div>

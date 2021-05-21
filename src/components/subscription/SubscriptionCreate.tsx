@@ -54,8 +54,8 @@ export default class SubscriptionCreate extends Component<
   }
 
   handleSubmit = (event: any) => {
-    console.log("Before SubscriptionCreate Fetch");
     if (this.props.sessionToken) {
+      console.log("Before SubscriptionCreate Fetch");
       event.preventDefault();
       fetch('http://localhost:3000/subscription/signup', {
         method: "POST",
@@ -71,7 +71,7 @@ export default class SubscriptionCreate extends Component<
         }),
         headers: new Headers({
           "Content-Type": "application/json",
-          Authorization: this.props.sessionToken,
+          'Authorization': this.props.sessionToken,
         }),
       })
         .then((response) => response.json())
@@ -101,6 +101,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ streetAddress1: e.target.value });
                   }}
                 />
+              </div>
+              <div>
                 <TextField
                   label="Street Address 2"
                   variant="outlined"
@@ -118,6 +120,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ city: e.target.value });
                   }}
                 />
+                </div>
+                <div>
                 <TextField
                   label="State"
                   variant="outlined"
@@ -126,6 +130,8 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ state: e.target.value });
                   }}
                 />
+                </div>
+                <div>
                 <TextField
                   label="Zip Code"
                   variant="outlined"
@@ -134,6 +140,7 @@ export default class SubscriptionCreate extends Component<
                     this.setState({ zip: e.target.value });
                   }}
                 />
+                
               </div>
               <Button
                 variant="contained"

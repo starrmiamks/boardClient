@@ -22,7 +22,7 @@ type UserState = {
     lastName: string;
     email: string;
     password: string;
-    admin: string;
+    isAdmin: string;
     userData: UserDetails[];
     results: UserDetails;
 };
@@ -36,7 +36,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
             lastName: '',
             email: '',
             password: '',
-            admin: '',
+            isAdmin: '',
             userData: [
                 {
                     id: 0,
@@ -44,7 +44,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                     lastName: '',
                     email: '',
                     password: '',
-                    admin: '',
+                    isAdmin: '',
                 },
             ],
             results: {
@@ -53,7 +53,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                 lastName: '',
                 email: '',
                 password: '',
-                admin: '',
+                isAdmin: '',
             },
         };
     }
@@ -74,7 +74,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                     this.setState({ firstName: results.firstName });
                     this.setState({ lastName: results.lastName });
                     this.setState({ email: results.email });
-                    this.setState({ admin: results.email });
+                    this.setState({ isAdmin: results.email });
                 })
 
                 .catch((err) => console.log(err));
@@ -93,7 +93,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                         lastName: this.state.lastName,
                         email: this.state.email,
                         password: this.state.password,
-                        admin: this.state.admin,
+                        isAdmin: this.state.isAdmin,
                     }
                 }),
                 headers: new Headers({
@@ -155,9 +155,9 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                 <TextField
                     label='Admin?'
                     type='text'
-                    value={this.state.admin}
+                    value={this.state.isAdmin}
                     onChange={(e) => {
-                        this.setState({ admin: e.target.value });
+                        this.setState({ isAdmin: e.target.value });
                     }}
                 />
                 <div>
@@ -168,7 +168,7 @@ export default class AdminEditUser extends Component<AdminProps, UserState> {
                                 firstName: ${this.state.firstName},
                                 lastName: ${this.state.lastName},
                                 email: ${this.state.email},
-                                admin: ${this.state.admin},
+                                admin: ${this.state.isAdmin},
                                 `);
                     }}
                     >
